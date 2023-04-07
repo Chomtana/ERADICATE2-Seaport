@@ -151,9 +151,13 @@ std::string makePreprocessorInitHashExpression(const std::string & strAddressBin
 	for (int i = 0; i < 20; ++i) {
 		h.b[i + 1] = strAddressBinary[i];
 	}
+	
+	for (int i = 0; i < 20; ++i) {
+		h.b[i + 21] = 0;
+	}
 
-	for (int i = 0; i < 32; ++i) {
-		h.b[i + 21] = distr(eng);
+	for (int i = 0; i < 12; ++i) {
+		h.b[i + 41] = distr(eng);
 	}
 
 	for (int i = 0; i < 32; ++i) {
