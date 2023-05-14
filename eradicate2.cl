@@ -87,9 +87,9 @@ void eradicate2_result_update(const uchar * const H, __global result * const pRe
 		if (hasResult == 0) {
 			// Reconstruct state with hash and extract salt
 			ethhash h = { .q = { ERADICATE2_INITHASH } };
-			h.d[6] += deviceIndex;
-			h.d[7] += get_global_id(0);
-			h.d[8] += round;
+			h.d[10] += deviceIndex;
+			h.d[11] += get_global_id(0);
+			h.d[12] += round;
 
 			ethhash be;
 
